@@ -7,4 +7,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by(:id => params[:id])
     # @recipe = Recipe.find(params[:id])
   end
+
+  def new
+    @recipe = Recipe.new
+  end
 end
