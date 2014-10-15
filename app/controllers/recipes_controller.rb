@@ -11,4 +11,10 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
   end
+
+  def create
+    Recipe.create(params[:recipe])
+
+    # Recipe.create({"name"=>"asdfasdf", "contributor"=>"asdfadsf", "ingredients"=>"asdfdasf", "directions"=>"asdfasdffsa"})
+  end
 end
