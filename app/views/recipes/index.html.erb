@@ -4,7 +4,7 @@
   <p><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></p>
   <p>
     <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
-    <a data-method="delete" href="/recipes/<%= recipe.id %>" rel="nofollow">Delete</a>
+    <a data-confirm="Are you sure?" data-method="delete" href="/recipes/<%= recipe.id %>" rel="nofollow">Delete</a>
   </p>
 
   <p>Contributed By: <%= recipe.contributor %></p>
