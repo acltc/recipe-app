@@ -21,4 +21,9 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find_by(:id => params[:id])
   end
+
+  def update
+    @recipe = Recipe.find_by(:id => params[:id])
+    @recipe.update(params[:recipe])
+  end
 end
