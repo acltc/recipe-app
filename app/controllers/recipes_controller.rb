@@ -17,4 +17,8 @@ class RecipesController < ApplicationController
 
     # Recipe.create({"name"=>"asdfasdf", "contributor"=>"asdfadsf", "ingredients"=>"asdfdasf", "directions"=>"asdfasdffsa"})
   end
+
+  def edit
+    @recipe = Recipe.find_by(:id => params[:id])
+  end
 end
