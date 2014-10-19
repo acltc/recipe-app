@@ -3,16 +3,15 @@
 <div class="row">
   <% @recipes.each do |recipe| %>
     <div class="col-md-3">
-      <p><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></p>
+      <a href="/recipes/<%= recipe.id %>">
+        <p><%= recipe.name %></p>
+        <p>By: <%= recipe.contributor %></p>
+        <img src="<%= recipe.photo %>" width="200" height="200">
+      </a>
       <p>
         <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
         <a data-confirm="Are you sure?" data-method="delete" href="/recipes/<%= recipe.id %>" rel="nofollow">Delete</a>
       </p>
-
-      <p>Contributed By: <%= recipe.contributor %></p>
-      <p>Ingredients: <%= recipe.ingredients %></p>
-      <p>Directions: <%= recipe.directions %></p>
-      <img src="<%= recipe.photo %>" width="200" height="200">
     </div>
   <% end %>
 </div>
