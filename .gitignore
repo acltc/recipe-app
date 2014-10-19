@@ -15,3 +15,8 @@
 /log/*.log
 /tmp
 .DS_Store
+app/assets/images/green_cup.png
+app/assets/images/navaho.jpg
+app/assets/images/old_map.png
+app/assets/images/restaurant_icons.png
+app/assets/images/ricepaper_v3.png
