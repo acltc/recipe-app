@@ -1,4 +1,23 @@
 <h1><%= @recipe.name %></h1>
+<h3><%= @recipe.contributor %></h3>
+<h4>Submitted At: <%= @recipe.friendly_created_at %></h4>
 
-<h2><%= @recipe.ingredients %></h2>
-<h2><%= @recipe.directions %></h2>
+<h2>Ingredients</h2>
+
+<ul>
+  <% @recipe.ingredient_list.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+
+
+
+
+<h2>Directions</h2>
+
+<ol>
+  <% @recipe.directions_list.each do |direction| %>
+    <li><%= direction %></li>
+  <% end %>
+</ol>

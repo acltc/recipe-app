@@ -3,12 +3,12 @@ class CreateRecipes < ActiveRecord::Migration
     create_table :recipes do |t|
       t.string :name
       t.string :ingredients
-      t.string :rating
+      t.integer :rating
       t.string :directions
       t.string :contributor
       t.string :photo
-      t.string :prep_time
-      t.string :servings
+      t.integer :prep_time
+      t.integer :servings
       t.string :serving_size
 
       t.timestamps

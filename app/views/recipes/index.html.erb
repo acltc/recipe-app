@@ -1,14 +1,19 @@
 <h1>Recipes</h1>
 
-<% @recipes.each do |recipe| %>
-  <p><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></p>
-  <p>
-    <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
-    <a data-confirm="Are you sure?" data-method="delete" href="/recipes/<%= recipe.id %>" rel="nofollow">Delete</a>
-  </p>
-
-  <p>Contributed By: <%= recipe.contributor %></p>
-  <p>Ingredients: <%= recipe.ingredients %></p>
-  <p>Directions: <%= recipe.directions %></p>
-  <br/>
-<% end %>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+      <div class="col-md-3">
+        <div class="thumb">
+          <a href="/recipes/<%= recipe.id %>">
+            <p><%= recipe.name %></p>
+            <img src="<%= recipe.photo %>" height="200" width="200"/>
+            <p>Contributed By: <%= recipe.contributor %></p>
+          </a>
+        </div>
+        <p>
+          <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+          <a data-confirm="Are you sure?" data-method="delete" href="/recipes/<%= recipe.id %>" rel="nofollow">Delete</a>
+        </p>
+      </div>
+  <% end %>
+</div>
