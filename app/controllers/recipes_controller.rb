@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+    @recipes = @recipes.order(:prep_time) if params[:order] == "prep_time"
   end
 
   def show
