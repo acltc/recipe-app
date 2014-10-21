@@ -11,20 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008011054) do
+ActiveRecord::Schema.define(version: 20141021011502) do
 
   create_table "recipes", force: true do |t|
     t.string   "name"
-    t.string   "ingredients"
+    t.text     "ingredients"
     t.integer  "rating"
-    t.string   "directions"
+    t.text     "directions"
     t.string   "contributor"
     t.string   "photo"
-    t.integer  "prep_time"
+    t.decimal  "prep_time",    precision: 7, scale: 2
     t.integer  "servings"
     t.string   "serving_size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "alternative"
+    t.string   "photo_2"
+    t.string   "photo_3"
+    t.string   "photo_4"
   end
 
 end
