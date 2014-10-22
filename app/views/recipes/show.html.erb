@@ -5,12 +5,10 @@
 <h2>Ingredients</h2>
 
 <ul>
-  <% @recipe.ingredient_list.each do |ingredient| %>
-    <li><%= ingredient %></li>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
   <% end %>
 </ul>
-
-
 
 
 

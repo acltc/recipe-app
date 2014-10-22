@@ -22,9 +22,9 @@ class RecipesController < ApplicationController
   end
 
   def create
-    Recipe.create(params[:recipe])
+    recipe = Recipe.create(params[:recipe])
     flash[:success] = "Recipe successfully added."
-    redirect_to '/recipes'
+    redirect_to "/recipes/#{recipe.id}"
     # Recipe.create({"name"=>"asdfasdf", "contributor"=>"asdfadsf", "ingredients"=>"asdfdasf", "directions"=>"asdfasdffsa"})
   end
 
@@ -35,10 +35,14 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find_by(:id => params[:id])
     @recipe.update(params[:recipe])
+    flash[:success] = "Recipe udpdated."
+    redirect_to "/recipes/#{params[:id]}"
   end
 
   def destroy
     @recipe = Recipe.find_by(:id => params[:id])
     @recipe.destroy
+    flash[:success] = "Recipe deleted."
+    redirect_to '/recipes'
   end
 end

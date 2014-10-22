@@ -1,4 +1,7 @@
 class Recipe < ActiveRecord::Base
+  has_many :ingredients
+
+
   def ingredient_list
     return ingredients.split(",")
   end
