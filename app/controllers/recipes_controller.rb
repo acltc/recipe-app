@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.create(params[:recipe])
+    recipe = current_user.recipes.create(params[:recipe])
     flash[:success] = "Recipe successfully added."
     redirect_to "/recipes/#{recipe.id}"
     # Recipe.create({"name"=>"asdfasdf", "contributor"=>"asdfadsf", "ingredients"=>"asdfdasf", "directions"=>"asdfasdffsa"})
