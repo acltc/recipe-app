@@ -1,5 +1,11 @@
 <h1>Recipes</h1>
 <h6><a href="/recipes/new">Add Recipe</a></h6>
+<h5>Categories</h5>
+<ul>
+  <% @categories.each do |category| %>
+    <li><a href="/?category=<%= category.name %>"><%= category.name %></li>
+  <% end %>
+</ul>
 <div class="row">
   <% @recipes.each do |recipe| %>
       <div class="col-md-3">

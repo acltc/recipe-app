@@ -4,6 +4,9 @@ class RecipesController < ApplicationController
     @recipes = Recipe.order(:prep_time) if params[:order] == "prep_time"
     @recipes = Recipe.where('prep_time <= ?', 5) if params[:feature] == "quick_fix"
     @recipes = Recipe.order(:created_at => :desc) if params[:order] == "submission_time"
+    @recipes = Recipe.joins(:categories).where("categories.name = ?", params[:category]) if params[:category] 
+    
+    @categories = Category.all
   end
 
   def show

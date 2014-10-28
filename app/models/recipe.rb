@@ -1,5 +1,7 @@
 class Recipe < ActiveRecord::Base
   has_many :ingredients
+  has_many :categorized_recipes
+  has_many :categories, :through => :categorized_recipes
   belongs_to :user
 
 
